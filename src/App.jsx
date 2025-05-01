@@ -32,8 +32,8 @@ const addToBurger = (ingredient) => {
   setStack([...stack, ingredient]);
 };
 
-const removeFromBurger = (ingredientToRemove) => {
-  setStack((prevStack) => prevStack.filter((ingredient) => ingredient !== ingredientToRemove));
+const removeFromBurger = (indexToRemove) => {
+  setStack((prevStack) => prevStack.filter((ingredient, index) => index !== indexToRemove));
 }
 
   

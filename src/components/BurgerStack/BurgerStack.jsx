@@ -3,26 +3,18 @@
 
 const BurgerStack = (props) => {
 
-return 
+return (
     <ul>
-      {props.stack.map((ingredient, index))
-    </ul>;
-  };
-  
+      {props.stack.length === 0 ? <p>Remove Ingredient!</p> : null}
+      {props.stack.map((ingredient, index) => (
+        <li style= {{backgroundColor: ingredient.color}}
+           key={index}>
+          <p>{ingredient.name}</p>
+          <button onClick={() => props.removeFromBurger(index)}>x</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
   export default BurgerStack;
   
-const IngredientList = (props) => {
-
-
-  return (
-      <ul>
-          {props.ingredients.map((ingredient, index) => (
-              <li key={index}>
-                  <p>{ingredient.name}</p>
-                   <p>{ingredient.color}</p>
-                  <button onClick={() => props.addToBurger(ingredient)}>Add to Burger</button>
-              </li>
-          ))}
-      </ul>
-  );
-};

@@ -8,10 +8,10 @@ const IngredientList = (props) => {
     return (
         <ul>
             {props.ingredients.map((ingredient, index) => (
-                <li key={index}>
+                <li style= {{backgroundColor: ingredient.color}}
+                key={index}>
                     <p>{ingredient.name}</p>
-                     <p>{ingredient.color}</p>
-                    <button onClick={() => props.addToBurger(ingredient)}>Add to Burger</button>
+                    <button onClick={() => props.addToBurger(ingredient)}>+</button>
                 </li>
             ))}
         </ul>
